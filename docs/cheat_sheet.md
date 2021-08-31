@@ -34,7 +34,7 @@ or
 - :bug: Fix a bug.
 - :recycle: Refactor code.
 - :construction: Work in progress.
-- :hammer: Add or update development scripts.
+- :hammer: Move files or add repository
 - :poop: Write bad code that needs to be improved.
 - :bulb: Add or update comments in source code.
 - :see_no_evil: Add or update a .gitignore file.
