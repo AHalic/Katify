@@ -1,0 +1,33 @@
+{
+  "name": "katify",
+  "version": "1.0.0",
+  "description": "Katify is a cat themed Kanban, developed to help users to organize their tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AHalic/Katify.git"
+  },
+  "keywords": [
+    "kanban",
+    "cat",
+    "productivity"
+  ],
+  "contributors": [
+      {
+        "name": "Beatriz Maia", 
+        "email": "beatriz.maia@edu.ufes.br"
+      },
+      {
+        "name": "Sophie Dilhon",
+        "email": "sophie.gama@edu.ufes.br"
+      }
+    ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AHalic/Katify/issues"
+  },
+  "homepage": "https://github.com/AHalic/Katify#readme"
+}
