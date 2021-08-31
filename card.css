@@ -1,0 +1,106 @@
+    /* Rectangle 10 */
+    
+    .square{
+        position: absolute;
+        /* width: 161px;
+        height: 105px;
+        left: 79px;
+        top: 598px; */
+        width: 161px;
+        height: 105px;
+        left: 200px;
+        top: 200px;
+        
+        background: #3D4044;
+        border-radius: 15px;
+    }
+    
+    
+    /* Vector 1 */
+    .cat-ear1{
+        position: absolute;
+        /* width: 16px;
+        height: 12px;
+        left: 198px;
+        top: 586px; */
+        width: 16px;
+        height: 12px;
+        left: 321px;
+        top: 188px;
+        border-bottom: 20px solid #3D4044;
+        border-left: 4px solid transparent;
+        border-right: 18px solid transparent;
+        height: 0;
+        width: 3px;
+        /* background: #3D4044; */
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    
+    
+    /* Vector 2 */
+    .cat-ear2{
+        position: absolute;
+        /* width: 16px;
+        height: 12px;
+        left: 98px;
+        top: 586px; */
+        width: 16px;
+        height: 12px;
+        left: 217px;
+        top: 188px;
+        
+        /* background: #3D4044; */
+        border-bottom: 20px solid #3D4044;
+        border-left: 4px solid transparent;
+        border-right: 18px solid transparent;
+        height: 0;
+        width: 3px;
+    }
+
+    /* .cat-ears {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        z-index: -1;
+    }
+      
+    .cat-ear {
+        width: 20px;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        top: -10px;
+    }
+    .cat-ear:first-child {
+        left: 0;
+        transform-origin: top left;
+        transform: skewY(40deg);
+        background-color: #3D4044;
+    }
+    .cat-ear:first-child:before {
+        left: 0;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        background-color: #3D4044;
+    }
+    .cat-ear:last-child {
+        right: 0;
+        transform-origin: top right;
+        transform: skewY(-40deg);
+        background-color: #3D4044;
+    }
+    .cat-ear:last-child:before {
+        right: 0;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        background-color: #3D4044;
+    }
+    .cat-ear:before {
+        width: 60%;
+        height: 100%;
+        top: 10px;
+        position: absolute;
+        background-color: #3D4044;
+    } */
