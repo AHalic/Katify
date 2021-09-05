@@ -9,3 +9,8 @@
 ☐ Add tasks columns to the interface design.
 
 # Program
+☐ Instalar pacote express
+☐ Instalar nodemon
+☐ Adicionar scripts:
+    ☐ start: node index.js
+    ☐ dev: nodemon index.js

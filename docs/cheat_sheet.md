@@ -14,7 +14,7 @@ Type:
 - change: Change file name or repository 
 
 Message: english, present tense third person
-Ex.: This commit `:sparkles: adds: commit cheat sheet`.
+Ex.: This commit `:sparkles: adds: adds cheat sheet`.
 
 
 When using liveshare include:
