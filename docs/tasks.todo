@@ -1,5 +1,5 @@
 # Study
-☐ Study javascript + NodeJs. Due: 05/09/2021
+☐ Study javascript + NodeJs. Due: 05/09/2021 @started(21-08-29)
     ☐ Study more about classes in html + javascript, for columns 
 ☐ Search more about module express 
 ☐ Study bootstrap 
@@ -9,8 +9,11 @@
 ☐ Add tasks columns to the interface design.
 
 # Program
-☐ Instalar pacote express
-☐ Instalar nodemon
+✔ Instalar pacote express @done(21-09-05)
+✔ Instalar nodemon @done(21-09-05)
 ☐ Adicionar scripts:
-    ☐ start: node index.js
-    ☐ dev: nodemon index.js
+    ✘ start: node index.js @cancelled(21-09-05)
+    ✔ dev: nodemon index.js -> start em vez de dev @done(21-09-05)
+
+# Questions
+☐ Devemos usar getters e setters em Javascript? Isso continua como boa prática?
