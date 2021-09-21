@@ -13,7 +13,7 @@ export default class Board {
         this.createCol(Status.discarded);
 
         // TODO create uuid
-        this._uuid = uuidv4();
+        // this._uuid = uuidv4();
     }
 
     createCol (status) {
