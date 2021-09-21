@@ -21,6 +21,7 @@ body {
 .card-counter {
     color: #FFFFFF;
     opacity: 0.55;
+    font-size: 18px;
 }
 
 .x-button {
@@ -28,8 +29,17 @@ body {
     opacity: 0.55;
 }
 
+.p-button {
+    justify-content: end;
+}
+
 .x-button:hover {
     color: #F7C4DB;
     opacity: 1;
     transition: 0.6;
+}
+
+.to-do-col {
+    margin-bottom: 2px;
+    border: #F7C4DB;
 }
