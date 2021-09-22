@@ -1,16 +1,25 @@
-// document.body.style.background = "#2D3035";
-// document.body.getElementsByClassName("card")
-import Board from './src/Board'
+// const express = require('express')
 
-board = new Board();
+// const app = express()
+
+// app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+
+// app.get('/', (req, res) => (res.send("Servidor rodando, test 123")))
 
 
 
-const express = require('express')
+import Board from '/src/Board.js';
+import {addDiscardHandler, addDoneHandler, addProgressHandler, addTodoHandler} from '/src/Events.js'
 
-const app = express()
+let board = new Board();
+board.boardName = "Kateste"
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+console.log(board);
 
-app.get('/', (req, res) => (res.send("Servidor rodando, test 123")))
+addDiscardHandler(document.getElementsByClassName("discard-button")[0], board);
 
+addDoneHandler(document.getElementsByClassName("done-button")[0], board);
+
+addTodoHandler(document.getElementsByClassName("todo-button")[0], board);
+
+addProgressHandler(document.getElementsByClassName("inProgress-button")[0], board);
