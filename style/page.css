@@ -4,7 +4,7 @@ body {
 
 .col-title{
     color: #FFFFFF; 
-    font-size: 20px;
+    font-size: 17px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
@@ -15,18 +15,21 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     margin-top: 2vh;
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
 }
 
 .card-counter {
     color: #FFFFFF;
     opacity: 0.55;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .x-button {
     color: #FFFFFF;
     opacity: 0.55;
+    justify-content: flex-end;
+    margin-top: 0px; 
+    padding-top: 0px;
 }
 
 .p-button {
