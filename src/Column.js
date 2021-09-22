@@ -1,4 +1,4 @@
-import CatCard from "./CatCard";
+import CatCard from "./CatCard.js";
 
 export default class Column {
     constructor(status) {
