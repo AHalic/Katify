@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Trab</title>
+    <title>Katify</title>
     <link rel="icon" href="resources/cat-icon.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -27,41 +27,74 @@
             <div class="row align-items-start">
                 <h1 class="workspace-name">WORKSPACE</h1>
             </div>
-            <div class="row">
+            <div class="row col-text">
                 
-                <div class="col-3 d-flex">
+                <div class="col-3 col-text d-flex">
                     <div class="col-8">
                         <p class="col-title">IN PROGRESS</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-1 offset-2">
                         <button class="btn x-button inProgress-button">+</button>
                     </div>
                 </div>
-                <div class="col-3 d-flex">
+                <div class="col-3 col-text d-flex">
                     <div class="col-8">
                         <p class="col-title">TO DO</p>
                     </div>
-                    <div class="col-4" style="margin-top: 0px; padding-top: 0px;">
+                    <div class="col-1 offset-2" style="margin-top: 0px; padding-top: 0px;">
                         <button class="btn x-button todo-button">+</button>
                     </div>                            
                 </div>
 
-                <div class="col-3 d-flex"> 
+                <div class="col-3 col-text d-flex"> 
                     <div class="col-8">
                         <p class="col-title">DONE</p>
                     </div>
-                    <div class="col-4" style="margin-top: 0px; padding-top: 0px;">
+                    <div class="col-1 offset-2" style="margin-top: 0px; padding-top: 0px;">
                         <button class="btn x-button done-button">+</button>
                     </div>
                           
                 </div>
-                <div class="col-3 d-flex"> 
+                <div class="col-3 col-text d-flex"> 
                     <div class="col-8">
                         <p class="col-title">DISCARDED</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-1 offset-2">
                         <button class="btn x-button discard-button">+</button>
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3 col-inProgress">
+                    <hr style="color: #914EB8; border-width: 1px; opacity: 100%; height: 1.3px;"/>
+                </div>
+
+                <div class="col-3">
+                    <hr style="color: #EF798A; border-width: 1px; opacity: 100%; height: 1.3px;"/>
+                </div>
+
+                <div class="col-3">
+                    <hr style="color: #0C98B9; border-width: 1px; opacity: 100%; height: 1.3px;"/>
+                </div>
+
+                <div class="col-3">
+                    <hr style="color: #7180B9; border-width: 1px; opacity: 100%; height: 1.3px;"/>
+                </div>
+            </div>
+
+            <div class="row box-col">
+                <div class="box-inProgress">
+
+                </div>
+                <div class="box-toDo">
+
+                </div>
+                <div class="box-done">
+
+                </div>
+                <div class="box-discarded">
+
                 </div>
             </div>
     </div>
