@@ -46,3 +46,35 @@ body {
     margin-bottom: 2px;
     border: #F7C4DB;
 }
+
+.col-text {
+    height: 20px;
+}
+
+/* .box-col { */
+
+/* } */
+
+.box-inProgress {
+    background: #914EB8;
+    opacity: 10%;
+    border-radius: 15px;
+}
+
+.box-toDo {
+    background: #EF798A;
+    opacity: 10%;
+    border-radius: 15px;
+}
+
+.box-done {
+    background: #0B7189;
+    opacity: 10%;
+    border-radius: 15px;
+}
+
+.box-discarded {
+    background: #7180B9;
+    opacity: 10%;
+    border-radius: 15px;
+}
