@@ -2,10 +2,6 @@
     
     .cat-square{
         position: absolute;
-        /* width: 161px;
-        height: 105px;
-        left: 79px;
-        top: 598px; */
         width: 161px;
         height: 105px;
         left: 200px;
@@ -20,10 +16,6 @@
     /* Vector 1 */
     .cat-ear1{
         position: absolute;
-        /* width: 16px;
-        height: 12px;
-        left: 198px;
-        top: 586px; */
         width: 16px;
         height: 12px;
         left: 321px;
@@ -42,16 +34,11 @@
     /* Vector 2 */
     .cat-ear2{
         position: absolute;
-        /* width: 16px;
-        height: 12px;
-        left: 98px;
-        top: 586px; */
-        width: 16px;
         height: 12px;
         left: 217px;
         top: 188px;
         
-        /* background: #3D4044; */
+        background: #3D4044;
         border-bottom: 20px solid #3D4044;
         border-left: 4px solid transparent;
         border-right: 18px solid transparent;

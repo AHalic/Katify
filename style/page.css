@@ -56,32 +56,28 @@ body {
 /* } */
 
 .box-inProgress {
-    background: #914EB8;
-    opacity: 10%;
+    background: rgba(145,78,184, 0.5);
     border-radius: 8px;
     padding: 10px;
     padding-bottom: 10px;
 }
 
 .box-toDo {
-    background: #EF798A;
-    opacity: 10%;
+    background: rgba(239,121,138, 0.5);
     border-radius: 8px;
     padding: 10px;
     padding-bottom: 10px;
 }
 
 .box-done {
-    background: #0B7189;
-    opacity: 10%;
+    background: rgba(11,113,137, 0.5);
     border-radius: 8px;
     padding: 10px;
     padding-bottom: 10px;
 }
 
 .box-discarded {
-    background: #7180B9;
-    opacity: 10%;
+    background: rgba(113,128,185, 0.5);
     border-radius: 8px;
     padding: 10px;
     padding-bottom: 10px;
@@ -90,4 +86,8 @@ body {
 .row {
     margin-right: calc(var(--bs-gutter-x) * 1.5);
     margin-left: calc(var(--bs-gutter-x) * 1.5);
+}
+
+.card {
+    margin-bottom: 10px;
 }
