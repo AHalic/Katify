@@ -32,8 +32,11 @@
   },
   "homepage": "https://github.com/AHalic/Katify#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.0",
+    "consign": "^0.1.6",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.12"
   }
 }
