@@ -1,11 +1,11 @@
-import Status from './Status.js';
-import Column from './Column.js';
+const Status = require('./Status');
+const Column = require('./Column');
 
 // import { v4 as uuidv4 } from 'uuid';
 
-export default class Board {
+class Board {
     constructor() {
-        this._boardName = "Undefined"
+        this._boardName = "Workspace"
         this._columns = {};
         this.createCol(Status.done);
         this.createCol(Status.toDo);
@@ -17,7 +17,8 @@ export default class Board {
     }
 
     createCol (status) {
-        this._columns[status] = new Column(status);
+        this._columns[status] = Column;
+        this._columns[status]
     }
 
     get boardName() {
@@ -36,3 +37,5 @@ export default class Board {
     //     return this._uuid;
     // }
 }
+
+module.exports = new Board;
