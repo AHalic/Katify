@@ -1,28 +1,42 @@
-const express = require('express')
+const customExpress = require('./src/config/customExpress')
+const conexao = require('./src/infra/conection')
+const Tabelas = require('./src/infra/tables')
 
-const app = express()
-app.use(express.static(__dirname));
+conexao.connect(erro => {
+    if(erro) {
+        console.log(erro)
+    } else {
+        console.log('conectado com sucesso')
+        
+        Tabelas.init(conexao)
+        
+        const app = customExpress()
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
-
-app.get("/", (req, res) => {
-
-    res.sendFile(__dirname+"/index.html");
-});
+        app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+    }
+})
 
 
-// import {Board} from './src/Board.js';
-// import {addDiscardHandler, addDoneHandler, addProgressHandler, addTodoHandler} from './src/Events.js'
+// const express = require('express');
+// const consign = require('consign')
 
-// let board = new Board();
+// const app = express();
+// app.use(express.static(__dirname));
+
+// consign()
+//     .include('controllers')
+//     .into(app)
+
+// app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
+
+// app.get("/", (req, res) => {
+//     console.log("Teste");
+//     // res.sendFile(__dirname+"/index.html");
+// });
+
+// const board = require('./src/Board');
+// const events = require('./src/Events');
+
 // board.boardName = "Kateste"
 
-// console.log(board);
-
-// addDiscardHandler(document.getElementsByClassName("discard-button")[0], board);
-
-// addDoneHandler(document.getElementsByClassName("done-button")[0], board);
-
-// addTodoHandler(document.getElementsByClassName("todo-button")[0], board);
-
-// addProgressHandler(document.getElementsByClassName("inProgress-button")[0], board);
+// // console.log(board);
