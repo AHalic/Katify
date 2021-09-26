@@ -14,7 +14,7 @@ body {
     font-size: 35px;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    margin-top: 2vh;
+    margin-top: 6vh;
     margin-bottom: 5vh;
 }
 
@@ -58,23 +58,36 @@ body {
 .box-inProgress {
     background: #914EB8;
     opacity: 10%;
-    border-radius: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .box-toDo {
     background: #EF798A;
     opacity: 10%;
-    border-radius: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .box-done {
     background: #0B7189;
     opacity: 10%;
-    border-radius: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .box-discarded {
     background: #7180B9;
     opacity: 10%;
-    border-radius: 15px;
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.row {
+    margin-right: calc(var(--bs-gutter-x) * 1.5);
+    margin-left: calc(var(--bs-gutter-x) * 1.5);
 }
