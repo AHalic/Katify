@@ -1,10 +1,15 @@
-import CatCard from "./CatCard.js";
+const CatCard = require("./models/CatCard");
 
-export default class Column {
-    constructor(status) {
-        this._name = status;
-        this._cards = [];
-    }   
+class Column {
+    _status;
+    _cards = [];
+    // constructor() {
+    //     // this._status = "untitled";
+    // }   
+
+    set status(status) {
+        this._status = status;
+    }
 
     pushCard(card) {
         this._cards.push(card);
@@ -15,3 +20,5 @@ export default class Column {
             this._cards.splice(this._cards.indexOf(card), 1);
     }
 }
+
+module.exports = new Column;

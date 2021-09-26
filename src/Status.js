@@ -6,4 +6,4 @@ const Status = {
     without: "No Status"
 };
 
-export default Status;
+module.exports = Status;
