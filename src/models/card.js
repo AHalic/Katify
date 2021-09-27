@@ -1,5 +1,5 @@
 const moment = require('moment');
-const conexao = require('../infraestrutura/conexao');
+const conexao = require('../infra/conection');
 
 class Card {
     adiciona(card, res) {
@@ -11,6 +11,7 @@ class Card {
                 res.status(400).json(erro);
             } else {
                 res.status(201).json(card);
+                console.log(card)
             }
         })
     }
@@ -24,6 +25,7 @@ class Card {
                 res.status(400).json(erro)
             } else {
                 res.status(200).json(resultados)
+                console.log(resultados)
             }
         })
     }
