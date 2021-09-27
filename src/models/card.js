@@ -25,16 +25,16 @@ class Card {
                 res.status(400).json(erro)
             } else {
                 res.status(200).json(resultados)
-                console.log(resultados)
+                // console.log(resultados)
             }
         })
     }
 
     buscaPorId(id, res) {
-        const sql = `SELECT * FROM Atendimentos WHERE id=${id}`
+        const sql = `SELECT * FROM KatifyBoard WHERE id=${id}`
 
         conexao.query(sql, (erro, resultados) => {
-            const card = resultados[0]
+            const card = resultados
             if(erro) {
                 res.status(400).json(erro)
             } else {
@@ -68,6 +68,5 @@ class Card {
     }
 }
 
-
-
+    
 module.exports = new Card;
