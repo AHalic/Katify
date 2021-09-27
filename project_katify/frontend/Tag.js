@@ -1,11 +1,11 @@
-export default class Tag {
+export class Tag {
     constructor(name="Untitled") {
         this.__name = name;
         this.__color = Math.round(Math.random() * (4 - 1) +1);
     }    
 }
 
-export default class Tags {
+export class Tags {
     constructor() {
         this.__list = [];
     }
