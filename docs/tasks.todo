@@ -1,12 +1,12 @@
 # Study
-☐ Study javascript + NodeJs. Due: 05/09/2021 @started(21-08-29)
+✔ Study javascript + NodeJs. Due: 05/09/2021 @started(21-08-29) @done(21-09-27 15:55) @lasted(4w1d15h55m21s)
     ☐ Study more about classes in html + javascript, for columns 
-☐ Search more about module express 
-☐ Study bootstrap 
+✔ Search more about module express @done(21-09-27 15:55)
+✔ Study bootstrap @done(21-09-27 15:55)
 
 # Design
-☐ Decide elements' positions. 
-☐ Add tasks columns to the interface design.
+✔ Decide elements' positions. @done(21-09-27 15:55)
+✔ Add tasks columns to the interface design. @done(21-09-27 15:55)
 
 # Program
 ✔ Instalar pacote express @done(21-09-05)
@@ -16,4 +16,4 @@
     ✔ dev: nodemon index.js -> start em vez de dev @done(21-09-05)
 
 # Questions
-☐ Devemos usar getters e setters em Javascript? Isso continua como boa prática?
+✔ Devemos usar getters e setters em Javascript? Isso continua como boa prática? @done(21-09-27 15:56)
