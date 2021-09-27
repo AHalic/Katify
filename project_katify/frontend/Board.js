@@ -1,11 +1,11 @@
-import { done, toDo, inProgress, discarded } from './Status.js';
+import Status from './Status.js';
 import Column from './Column.js';
 
 // import { v4 as uuidv4 } from 'uuid';
 
 class Board {
     constructor() {
-        this._boardName = "Workspace"
+        this._boardName = "Workspace";
         this._columns = {};
         this.createCol(done);
         this.createCol(toDo);
@@ -38,4 +38,4 @@ class Board {
     // }
 }
 
-export default new Board;
+export default Board;
