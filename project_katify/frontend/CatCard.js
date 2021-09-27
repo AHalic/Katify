@@ -1,4 +1,4 @@
-const Status = require('../Status');
+import Status from './Status.js';
 
 class CatCard {
     constructor() {
@@ -47,4 +47,4 @@ class CatCard {
     }
 }
 
-module.exports = new CatCard;
+export default CatCard;

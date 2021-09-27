@@ -1,11 +1,8 @@
-const CatCard = require("./models/CatCard");
-
 class Column {
-    _status;
-    _cards = [];
-    // constructor() {
-    //     // this._status = "untitled";
-    // }   
+    constructor() {
+        _status;
+        _cards = [];
+    }
 
     set status(status) {
         this._status = status;
@@ -21,4 +18,4 @@ class Column {
     }
 }
 
-module.exports = new Column;
+export default Column;

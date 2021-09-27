@@ -5,5 +5,5 @@ const Status = {
     discarded: "Discarded",
     without: "No Status"
 };
-
-module.exports = Status;
+export default Status;
+// module.exports = Status;
