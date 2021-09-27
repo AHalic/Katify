@@ -8,7 +8,7 @@ module.exports = () => {
     app.use(express.json())
     app.use(express.urlencoded({ extended: true}))
     consign()
-        .include('controllers')
+        .include('src/controllers')
         .into(app)
     
     return app;
