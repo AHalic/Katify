@@ -66,6 +66,19 @@ class Card {
             }
         })
     }
+
+    listaTags(res) {
+        const sql = 'SELECT DISTINCT tag1 from KatifyBoard UNION SELECT DISTINCT tag2 FROM KatifyBoard';
+
+        conexao.query(sql, (erro, resultados) => {
+            const card = resultados
+            if(erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(card)
+            }
+        })
+    }
 }
 
     
