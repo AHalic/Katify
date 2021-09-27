@@ -3,11 +3,10 @@ const Card = require('../models/card')
 module.exports = app => {
     app.post('/', (req, res) => {
         const card = req.body;
-
         Card.adiciona(card, res)
     })
     
-    app.get('/', (req, res) => {
+    app.get('/', (req, res) => {  
         Card.lista(res)
     })
 
