@@ -2,9 +2,9 @@ const moment = require('moment');
 const conexao = require('../infra/conection');
 
 class Card {
-    adiciona(card, res) {
+    add(card, res) {
        
-        const sql = 'INSERT INTO KatifyBoard SET ?';
+        const sql = 'INSERT INTO Cards SET ?';
 
         conexao.query(sql, card, (erro, resultados) => {
             if(erro) {
@@ -17,8 +17,8 @@ class Card {
     }
 
 
-    lista(res) {
-        const sql = 'SELECT * FROM KatifyBoard'
+    get(uuid, res) {
+        const sql = `SELECT * FROM Cards WHERE uuid="${uuid}"`
 
         conexao.query(sql, (erro, resultados) => {
             if(erro) {
@@ -30,8 +30,8 @@ class Card {
         })
     }
 
-    buscaPorId(id, res) {
-        const sql = `SELECT * FROM KatifyBoard WHERE id=${id}`
+    searchID(uuid, id, res) {
+        const sql = `SELECT * FROM Cards WHERE id=${id} AND uuid="${uuid}"`
 
         conexao.query(sql, (erro, resultados) => {
             const card = resultados
@@ -43,10 +43,10 @@ class Card {
         })
     }
 
-    altera(id, valores, res) {  
-        const sql = 'UPDATE KatifyBoard SET ? WHERE id=?'
+    change(uuid, id, valores, res) {  
+        const sql = 'UPDATE Cards SET ? WHERE id=? and uuid=?'
 
-        conexao.query(sql, [valores, id], (erro, resultados) => {
+        conexao.query(sql, [valores, id, uuid], (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {
@@ -55,10 +55,10 @@ class Card {
         })
     }
 
-    deleta(id, res) {
-        const sql = 'DELETE FROM KatifyBoard WHERE id=?'
+    deleteID(uuid, id, res) {
+        const sql = 'DELETE FROM Cards WHERE id=? AND uuid=?'
 
-        conexao.query(sql, id, (erro, resultados) => {
+        conexao.query(sql, [id, uuid], (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {
@@ -67,18 +67,31 @@ class Card {
         })
     }
 
-    listaTags(res) {
-        const sql = 'SELECT DISTINCT tag1 from KatifyBoard UNION SELECT DISTINCT tag2 FROM KatifyBoard';
+    delete(uuid, res) {
+        const sql = 'DELETE FROM Cards WHERE uuid=?'
 
-        conexao.query(sql, (erro, resultados) => {
-            const card = resultados
+        conexao.query(sql, uuid, (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {
-                res.status(200).json(card)
+                res.status(200).json(uuid)
             }
         })
     }
+
+    // listaTags(uuid, res) {
+    //  // Se for usar adicionar where
+    //     const sql = 'SELECT DISTINCT tag1 from Cards WHERE  UNION SELECT DISTINCT tag2 FROM Cards WHERE ';
+
+    //     conexao.query(sql, (erro, resultados) => {
+    //         const card = resultados
+    //         if(erro) {
+    //             res.status(400).json(erro)
+    //         } else {
+    //             res.status(200).json(card)
+    //         }
+    //     })
+    // }
 }
 
     
