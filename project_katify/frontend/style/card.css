@@ -1,48 +1,20 @@
-    /* Rectangle 10 */
-    
-    .cat-square{
-        position: absolute;
-        width: 161px;
-        height: 105px;
-        left: 200px;
-        top: 200px;
-        
-        background: #3D4044;
-        border-radius: 15px;
-        filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.1));
-    }
-    
-    
-    /* Vector 1 */
-    .cat-ear1{
-        position: absolute;
-        width: 16px;
-        height: 12px;
-        left: 321px;
-        top: 188px;
-        border-bottom: 20px solid #3D4044;
-        border-left: 4px solid transparent;
-        border-right: 18px solid transparent;
-        height: 0;
-        width: 3px;
-        /* background: #3D4044; */
-        transform: matrix(-1, 0, 0, 1, 0, 0);
-        filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.1));
-    }
-    
-    
-    /* Vector 2 */
-    .cat-ear2{
-        position: absolute;
-        height: 12px;
-        left: 217px;
-        top: 188px;
-        
-        background: #3D4044;
-        border-bottom: 20px solid #3D4044;
-        border-left: 4px solid transparent;
-        border-right: 18px solid transparent;
-        height: 0;
-        width: 3px;
-        filter: drop-shadow(3px 4px 4px rgba(0, 0, 0, 0.1));
-    }
+
+.card {
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 7px #2a2b2e;
+    background-color: #3D4044;
+    color:aliceblue;
+    font-family: Montserrat, sans-serif;
+}
+
+.card h5 {
+    font-size: 1rem;
+}
+
+.card h6 {
+    font-size: 0.8rem;
+}
+
+.card p {
+    font-size: 1rem;
+}
