@@ -1,37 +1,51 @@
 const Card = require('../models/card')
 
 module.exports = app => {
-    app.post('/', (req, res) => {
+    app.post('/:uuid', (req, res) => {
         const card = req.body;
-        Card.adiciona(card, res)
+        Card.add(card, res)
     })
     
-    app.get('/', (req, res) => {  
-        Card.lista(res)
+    app.get('/:uuid', (req, res) => {  
+        const uuid = req.params.uuid
+
+        Card.get(uuid, res)
     })
 
-    app.get('/:id', (req, res) => {
+    app.get('/:uuid/:id', (req, res) => {
+        const uuid = req.params.uuid
         const id = parseInt(req.params.id)
 
-        Card.buscaPorId(id, res)
+        // TO DO
+        Card.searchID(uuid, id, res)
     })
 
-    app.post('/', (req, res) => {
-       const Card = req.body
+    app.post('/:uuid', (req, res) => {
+        const uuid = req.params.uuid
+        const Card = req.body
 
-        Card.adiciona(Card, res)
+        Card.add(Card, res)
     }) 
 
-    app.patch('/:id', (req, res) => {
+    app.patch('/:uuid/:id', (req, res) => {
+        const uuid = req.params.uuid
         const id = parseInt(req.params.id)
         const valores = req.body
 
-        Card.altera(id, valores, res)
+        Card.change(uuid, id, valores, res)
     })
 
-    app.delete('/:id', (req, res) => {
+    app.delete('/:uuid/:id', (req, res) => {
+        const uuid = req.params.uuid
         const id = parseInt(req.params.id)
 
-        Card.deleta(id, res)
+        Card.deleteID(uuid, id, res)
+    })
+
+    app.delete('/:uuid', (req, res) => {
+        const uuid = req.params.uuid
+        const id = parseInt(req.params.id)
+
+        Card.delete(id, res)
     })
 }
