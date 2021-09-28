@@ -1,0 +1,70 @@
+.col-title{
+    color: #FFFFFF; 
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.x-button {
+    color: #FFFFFF;
+    opacity: 0.55;
+    justify-content: flex-end;
+    margin-top: 0px; 
+    padding-top: 0px;
+}
+
+.p-button {
+    justify-content: end;
+}
+
+.x-button:hover {
+    color: #F7C4DB;
+    opacity: 1;
+    transition: 0.6;
+}
+
+.to-do-col {
+    margin-bottom: 2px;
+    border: #F7C4DB;
+}
+
+.col-text {
+    height: 20px;
+}
+
+/* .box-col { */
+
+/* } */
+
+.box-inProgress {
+    background: rgba(145,78,184, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.box-toDo {
+    background: rgba(239,121,138, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.box-done {
+    background: rgba(11,113,137, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.box-discarded {
+    background: rgba(113,128,185, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 10px;
+}
+
+.row {
+    margin-right: calc(var(--bs-gutter-x) * 1.5);
+    margin-left: calc(var(--bs-gutter-x) * 1.5);
+}
