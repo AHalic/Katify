@@ -18,3 +18,15 @@
 .card p {
     font-size: 1rem;
 }
+
+.boardTitle {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
