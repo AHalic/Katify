@@ -15,7 +15,7 @@ module.exports = () => {
         next();
     });
     consign()
-        .include('backend/controllers')
+        .include('/controllers')
         .into(app)
 
     return app;
