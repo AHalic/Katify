@@ -32,7 +32,7 @@ CREATE DATABASE katify;
 
 ### Instalation 
 
-To install all packages used run:
+To install all packages used run, inside the backend and frontend repository:
 
 ```sh
 npm install
@@ -40,16 +40,16 @@ npm install
 
 ### Starting backend server
 
-To start backend server, run the following command in the project's root:
-
+To start backend server, run the following command in the backend repository:
 ```sh
 npm start
 ```
+This server runs in the port 3000.
 
 ### Starting frontend server
 
-In order to start showcase the frontend onto localhost:port, run the following command, substituting the number `8000` with your desired port.  
-
+In order to start showcase the frontend, run the following command in the frontend repository:  
 ```sh
-npx http-server -a localhost -p 8000
+npm start
 ```
+This server runs in the port 8000.
