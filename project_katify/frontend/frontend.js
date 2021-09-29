@@ -1,24 +1,35 @@
 import Events from './models/Events.js'
 import Board from './models/Board.js'
+import api from './api.js'
 
 const url = "http://localhost:3000"
 
-fetch(url)
-  .then(function(response) {
-    response.json().then(function(data) {
+api.get('').then(res => {
+	res.data.map((board) => {
+		let colBox = document.getElementsByClassName("home-board")[0]
 
-    	data.map((board) => {
-			var a = document.createElement('a')
-			var linkText = document.createTextNode(board.name)
-			a.appendChild(linkText)
-			a.title = "Link"
-			a.href = `http://localhost:8000/${board.uuid}`
-			document.body.appendChild(a)
+		let colDiv = document.createElement("div")
+		colDiv.classList.add("col")
 
-		})
+		let outerDiv = document.createElement("div")
+		outerDiv.className = "card"
+	
+		let innerDiv = document.createElement("div")
+		innerDiv.className = "card-body"
+	
+		let cardTitle = document.createElement("h2")
+		cardTitle.className = "boardTitle"
+		cardTitle.innerHTML = board.name
 
-    })
-  })
-  .catch(function(error){
-    console.log("Something went wrong: can't connect to backend")
-  })
+		innerDiv.appendChild(cardTitle)
+		outerDiv.appendChild(innerDiv)    
+		
+		let a = document.createElement('a')
+		
+		a.appendChild(outerDiv)
+		a.title = "Link"
+		a.href = `http://localhost:8000/${board.uuid}`
+		colDiv.appendChild(a)
+		colBox.appendChild(colDiv)    
+	})
+})
