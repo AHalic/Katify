@@ -1,25 +1,24 @@
-import Events from './Events.js';
-import Board from './Board.js';
+import Events from './models/Events.js'
+import Board from './models/Board.js'
 
 const url = "http://localhost:3000"
 
 fetch(url)
   .then(function(response) {
     response.json().then(function(data) {
-      console.log(data)
-      // boardName = "Kateste"
-      
-      // Events.addDiscardHandler(document.getElementsByClassName("discard-button")[0], board);
-      
-      // Events.addDoneHandler(document.getElementsByClassName("done-button")[0], board);
-      
-      // Events.addTodoHandler(document.getElementsByClassName("todo-button")[0], board);
-      
-      // Events.addProgressHandler(document.getElementsByClassName("inProgress-button")[0], board);
+
+    	data.map((board) => {
+			var a = document.createElement('a')
+			var linkText = document.createTextNode(board.name)
+			a.appendChild(linkText)
+			a.title = "Link"
+			a.href = `http://localhost:8000/${board.uuid}`
+			document.body.appendChild(a)
+
+		})
+
     })
   })
   .catch(function(error){
-    console.log("deu ruim")
+    console.log("Something went wrong: can't connect to backend")
   })
-
-
