@@ -4,16 +4,16 @@ import Column from './Column.js';
 // import { v4 as uuidv4 } from 'uuid';
 
 class Board {
-    constructor() {
-        this._boardName = "Workspace";
+    constructor(boardName="Workspace", uuid) {
+        this._boardName = boardName;
         this._columns = {};
-        this.createCol(done);
-        this.createCol(toDo);
-        this.createCol(inProgress);
-        this.createCol(discarded);
+        this.createCol(Status.done);
+        this.createCol(Status.toDo);
+        this.createCol(Status.inProgress);
+        this.createCol(Status.discarded);
 
         // TODO create uuid
-        // this._uuid = uuidv4();
+        this._uuid = uuid;
     }
 
     createCol (status) {
@@ -27,6 +27,9 @@ class Board {
 
     set boardName(name) {
         this._boardName = name;
+
+        // Isso provavelmente n fica aqui e o board name deveria ser salvo no db
+        document.getElementsByClassName("workspace-name")[0] = this._boardName;
     }
 
     addToColumn (status, card) {
