@@ -11,7 +11,7 @@ class Card {
                 res.status(400).json(erro);
             } else {
                 res.status(201).json(card);
-                console.log(card)
+                // console.log(card)
             }
         })
     }
@@ -25,7 +25,7 @@ class Card {
                 res.status(400).json(erro);
             } else {
                 res.status(200).json(resultados);
-                console.log(resultados);
+                // console.log(resultados);
             }
         })
     }

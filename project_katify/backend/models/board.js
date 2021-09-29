@@ -17,7 +17,7 @@ class Board {
                 res.status(400).json(erro);
             } else {
                 res.status(201).json(board);
-                console.log(board)
+                // console.log(board)
             }
         })          
     }
@@ -31,7 +31,7 @@ class Board {
                 res.status(400).json(erro);
             } else {
                 res.status(200).json(resultados);
-                console.log(resultados);
+                // console.log(resultados);
             }
         })
     }
@@ -45,15 +45,18 @@ class Board {
                 res.status(400).json(erro)
             } else {
                 res.status(200).json(board)
-                console.log(resultados)
+                // console.log(resultados)
             }
         })
     }
 
     change(uuid, name, res) {  
-        const sql = 'UPDATE Boards SET ? WHERE uuid=?'
+        console.log(name)
+        console.log(uuid)
+        const sql = `UPDATE Boards SET name="${name.name}" WHERE uuid="${uuid}"`
 
-        conexao.query(sql, [name, uuid], (erro, resultados) => {
+        conexao.query(sql, (erro, resultados) => {
+            console.log(`sql code = ${sql}`)
             if(erro) {
                 res.status(400).json(erro)
             } else {
