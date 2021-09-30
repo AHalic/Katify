@@ -17,12 +17,7 @@ function getStatus(status) {
 }
 
 function createCard(data) {
-    let card = new CatCard(data.name, 
-                       getStatus(data.status),
-                       data.description,
-                       [data.tag1, data.tag2], 
-                       data.id,
-                       data.uuid) 
+    let card = new CatCard(data.name, getStatus(data.status), data.description, [data.tag1, data.tag2], data.id, data.uuid) 
 
     let colBox 
     
@@ -38,6 +33,7 @@ function createCard(data) {
     
     let outerDiv = document.createElement("div")
     outerDiv.className = "card"
+    outerDiv.setAttribute("id", card.id);
 
     let innerDiv = document.createElement("div")
     innerDiv.className = "card-body"
@@ -45,22 +41,9 @@ function createCard(data) {
     let cardName = document.createTextNode(card.name)
     
 
-    let hiddenID = document.createElement("div")
-    hiddenID.classList.add("hidden", "id-card")
-    let hiddenIDtext = document.createTextNode(card.id)
-    hiddenID.appendChild(hiddenIDtext)
 
-    let hiddenUUID = document.createElement("div")
-    hiddenUUID.classList.add("hidden", "uuid-card")
-    let hiddenUUIDtext = document.createTextNode(card.uuid)
-    hiddenUUID.appendChild(hiddenUUIDtext)   
-
-    innerDiv.appendChild(name)
-    
+    innerDiv.appendChild(cardName)
     outerDiv.appendChild(innerDiv)    
-    outerDiv.appendChild(hiddenID)
-    outerDiv.appendChild(hiddenUUID)
-
     colBox.appendChild(outerDiv)      
 }
 
