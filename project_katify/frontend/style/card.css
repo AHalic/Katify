@@ -1,11 +1,14 @@
 
 .card {
     margin-bottom: 10px;
-    box-shadow: 2px 2px 7px #2a2b2e;
+    box-shadow: 2px 2px 2px #2a2b2e;
+    border: 0px solid rgba(0,0,0,0);
     background-color: #3D4044;
     color:aliceblue;
     font-family: Montserrat, sans-serif;
+    height: 100%;
 }
+
 
 .card h5 {
     font-size: 1rem;
@@ -29,4 +32,27 @@ a {
 
 .hidden {
     display: none;
+}
+
+.add-board, .add-board:focus, .add-board:active {
+    box-shadow: 2px 2px 7px #2a2b2e;
+    border: 0px solid rgba(0,0,0,0);
+    background-color: #3D4044;
+    color:aliceblue;
+    font-family: Montserrat, sans-serif;
+    border-style: outset;
+    outline: 0 !important;
+    border: none;
+}
+
+btn:active, btn:focus btn:visited {
+    outline-color: transparent;
+    outline: none;
+    box-shadow: none;
+    border: 0px solid rgba(0,0,0,0);
+}
+
+
+.add-board:hover {
+    background-color: rgba(60, 61, 63, 0.797)
 }
