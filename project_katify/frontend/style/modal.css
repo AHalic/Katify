@@ -1,0 +1,34 @@
+.modal-content {
+    background-color: #2D3035;
+    color: #F7C4DB;
+    font-family: Montserrat, sans-serif;
+}
+
+.modal-backdrop {
+    background-color: rgba(39, 0, 18, 0.3);
+ }
+
+.modal-header {
+    border-bottom: 0px;
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+
+.btn-primary:hover {
+    background-color: #EF798A;
+    border-color: #EF798A;
+}
+
+.form-addCard {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    background-color: transparent;
+    color: white;
+    border: 0px solid rgba(0,0,0,0);
+    outline-color: transparent;
+}
