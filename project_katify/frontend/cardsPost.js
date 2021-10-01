@@ -4,81 +4,102 @@ import Status from './models/Status.js'
 const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:3000`
 
-function postCardDiscarded() {
-    let status = Status.discarded
+let inProgButEvent = document.getElementsByClassName("x-button")[0]
+let toDoButEvent = document.getElementsByClassName("x-button")[1]
+let doneButEvent = document.getElementsByClassName("x-button")[2]
+let discardedButEvent = document.getElementsByClassName("discard-button")[0]
 
+function postCard(status, box) {
+    let data = document.forms["modalForm"].elements
+    let card = { "name": data[0].value,
+                 "status": status, 
+                 "description": data[3].value,
+                 "tag1": data[1].value, 
+                 "tag2" : data[2].value,
+                 "uuid": boarduuid
+                }
 
-    
-    let inProgColBox = document.getElementsByClassName("box-discarded")[0]
-    let outerDiv = document.createElement("div")
-    outerDiv.className = "card"
+    console.log(card)
+    api.post(`/${boarduuid}`, card)
+    .then(response => {
+        let id = response
+        let colBox = document.getElementsByClassName(box)[0]
 
-    let innerDiv = document.createElement("div")
-    innerDiv.className = "card-body"
+        let outerDiv = document.createElement("div")
+        outerDiv.className = "card"
+        outerDiv.setAttribute("id", id);
 
-    outerDiv.appendChild(innerDiv)    
-    // let t = document.createTextNode("This is a paragraph.")
-    // innerDiv.appendChild(t)
-    inProgColBox.appendChild(outerDiv)   
+        let innerDiv = document.createElement("div")
+        innerDiv.className = "card-body"
 
+        let cardName = document.createTextNode(card.name)
+
+        innerDiv.appendChild(cardName)
+        outerDiv.appendChild(innerDiv)
+        
+        let tagRow = document.createElement("div")
+        tagRow.classList.add("row", "tag-row")
+
+        if (card.tag1 != null) {
+            let tagOne = document.createTextNode(card.tag1)
+            let divTagOne = document.createElement("div")
+
+            divTagOne.appendChild(tagOne)
+            divTagOne.classList.add("tag-pink")
+            tagRow.appendChild(divTagOne)
+        } 
+
+        if (card.tag2 != null) {
+            let tagTwo = document.createTextNode(card.tag2)
+            tagTwo.classList.add("tag-pink")
+            tagRow.appendChild(tagTwo)
+        }
+
+        outerDiv.appendChild(tagRow)
+        colBox.appendChild(outerDiv)  
+    })
+    .catch(err => {
+        alert(`Something went wrong: ${err}`)
+    })
 }
 
 function postCardInProgress() {
-    let inProgColBox = document.getElementsByClassName("box-inProgress")[0]
-
-    let outerDiv = document.createElement("div")
-    outerDiv.className = "card"
-
-    let innerDiv = document.createElement("div")
-    innerDiv.className = "card-body"
-
-    // let t = document.createTextNode("This is a paragraph.")
-    // innerDiv.appendChild(t)
-    outerDiv.appendChild(innerDiv)    
-    inProgColBox.appendChild(outerDiv)
+    postCard(Status.inProgress, "box-inProgress")
 }
 
 function postCardToDo() {
-    let inProgColBox = document.getElementsByClassName("box-toDo")[0]
-
-    let outerDiv = document.createElement("div")
-    outerDiv.className = "card"
-
-    let innerDiv = document.createElement("div")
-    innerDiv.className = "card-body"
-
-    // let t = document.createTextNode("This is a paragraph.")
-    // innerDiv.appendChild(t)
-    outerDiv.appendChild(innerDiv)    
-    inProgColBox.appendChild(outerDiv)    
+    postCard(Status.toDo, "box-toDo")
 }
 
 function postCardDone() {
-    let inProgColBox = document.getElementsByClassName("box-done")[0]
+    postCard(Status.done, "box-done")
+}
 
-    let outerDiv = document.createElement("div")
-    outerDiv.className = "card"
+function postCardDiscarded() {
+    postCard(Status.discarded, "box-discarded")
+}
 
-    let innerDiv = document.createElement("div")
-    innerDiv.className = "card-body"
+function clickedPostCardToDo() {
+    let createTask = document.getElementsByClassName("create-task-btn")[0]
+    createTask.onclick = postCardToDo
+}
 
-    // let t = document.createTextNode("This is a paragraph.")
-    // innerDiv.appendChild(t)
-    outerDiv.appendChild(innerDiv)    
-    inProgColBox.appendChild(outerDiv)    
+function clickedPostCardDone() {
+    let createTask = document.getElementsByClassName("create-task-btn")[0]
+    createTask.onclick = postCardDone
+}
+
+function clickedPostCardInProgress() {
+    let createTask = document.getElementsByClassName("create-task-btn")[0]
+    createTask.onclick = postCardInProgress
 }
 
 function clickedPostCardDiscarded() {
     let createTask = document.getElementsByClassName("create-task-btn")[0]
-    createTask.addEventListener('click', postCardDiscarded, false) 
+    createTask.onclick = postCardDiscarded
 }
 
-let inProgButEvent = document.getElementsByClassName("x-button")[0]
-let toDoButEvent = document.getElementsByClassName("x-button")[1]
-let doneButEvent = document.getElementsByClassName("x-button")[2]
-let discardedButEvent = document.getElementsByClassName("x-button")[3]
-
-inProgButEvent.addEventListener('click', postCardInProgress, true);
-toDoButEvent.addEventListener('click', postCardToDo, true);
-doneButEvent.addEventListener('click', postCardDone, true);
+inProgButEvent.addEventListener('click', clickedPostCardInProgress, true);
+toDoButEvent.addEventListener('click', clickedPostCardToDo, true);
+doneButEvent.addEventListener('click', clickedPostCardDone, true);
 discardedButEvent.addEventListener('click', clickedPostCardDiscarded, true);
