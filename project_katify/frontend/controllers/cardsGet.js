@@ -22,14 +22,18 @@ function createCard(data) {
     let card = new CatCard(data.name, getStatus(data.status), data.description, [data.tag1, data.tag2], data.id, data.uuid) 
     let colBox 
     
-    if (card.status == Status.done)
+    if (card.status == Status.done){
         colBox = document.getElementsByClassName("box-done")[0]
-    else if (card.status == Status.toDo)
+    }
+    else if (card.status == Status.toDo){
         colBox = document.getElementsByClassName("box-toDo")[0]
-    else if (card.status == Status.discarded)
+    }
+    else if (card.status == Status.discarded){
         colBox = document.getElementsByClassName("box-discarded")[0]  
-    else if (card.status == Status.inProgress)
+    }
+    else if (card.status == Status.inProgress){
         colBox = document.getElementsByClassName("box-inProgress")[0]
+    }
 
     let outerDiv = document.createElement("div")
     outerDiv.className = "card"
