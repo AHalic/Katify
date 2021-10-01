@@ -1,5 +1,5 @@
 const moment = require('moment');
-const conexao = require('../infra/conection');
+const conexao = require('../infra/connection');
 
 class Card {
     add(card, res) {
