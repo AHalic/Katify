@@ -20,13 +20,6 @@ module.exports = app => {
         Card.searchID(uuid, id, res)
     })
 
-    app.post('/:uuid', (req, res) => {
-        const uuid = req.params.uuid
-        const Card = req.body
-
-        Card.add(Card, res)
-    }) 
-
     app.patch('/:uuid/:id', (req, res) => {
         const uuid = req.params.uuid
         const id = parseInt(req.params.id)
