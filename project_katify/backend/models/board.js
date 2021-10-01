@@ -1,6 +1,6 @@
 const moment = require('moment');
 const uuidv4 = require('uuidv4');
-const conexao = require('../infra/conection');
+const conexao = require('../infra/connection');
 
 class Board {
     create(boardName, res) {

@@ -1,5 +1,5 @@
 const customExpress = require('./config/customExpress')
-const conexao = require('./infra/conection')
+const conexao = require('./infra/connection')
 const Tabelas = require('./infra/tables')
 const express = require('express');
 const cors = require('cors')
