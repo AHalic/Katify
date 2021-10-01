@@ -50,7 +50,6 @@ class Board {
         const sql = `UPDATE Boards SET name="${name.name}" WHERE uuid="${uuid}"`
 
         conexao.query(sql, (erro, resultados) => {
-            console.log(`sql code = ${sql}`)
             if(erro) {
                 res.status(400).json(erro)
             } else {
