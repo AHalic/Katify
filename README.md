@@ -4,7 +4,8 @@
 Developed by Beatriz Maia & Sophie Dilhon 
 
 ## About the project
-Katify is a cat themed Kanban, developed to help users to organize their tasks. 
+
+Katify is a cat themed Kanban, developed to help users to organize their tasks. For now it doesn't have a multi-users system implemented and runs only for one user. The frontend and backend are implemented seperately with frontend realated features in project_katify/frontend and backend in project_katify/backend. 
 
 ## Features
 
@@ -13,7 +14,6 @@ Katify is a cat themed Kanban, developed to help users to organize their tasks.
 - :green_circle: Kanban columns divided into: "To Do", "In Progress", "Done" and "Discarded". 
 - :green_circle: Cards with atributes: name, tag, description and status.
 - :large_blue_circle: Drag and drop cards to change status.
-
 
 Key: 
 - :green_circle: Feature implemented 
@@ -58,7 +58,7 @@ This server runs in the port 3000.
 
 ### Starting frontend server
 
-In order to start showcase the frontend, run the following command in the frontend repository:  
+In order to showcase the frontend, run the following command in the frontend repository:  
 ```sh
 npm start
 ```
