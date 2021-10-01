@@ -58,7 +58,7 @@
 							</form>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary btn-add create-task-btn">Create task</button>
+							<button type="button" class="btn btn-primary btn-add create-task-btn" data-dismiss="modal">Create task</button>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,8 @@
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary btn-add create-task-btn">Edit task</button>
+						<button type="button" class="btn btn-secondary btn-delete" data-dismiss="modal">Delete task</button>
+						<button type="button" class="btn btn-primary btn-add edit-task-btn" data-dismiss="modal">Edit task</button>
 					</div>
 				</div>
 			</div>
@@ -202,10 +203,11 @@
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script type="module" src="api.js"></script>
-		<script type="module" src="boardfetch.js"></script>
-		<script type="module" src="boardDelete.js"></script>
-		<script type="module" src="cardsPost.js"></script>
-		<script type="module" src="cardsGet.js"></script>
+		<script type="module" src="/controllers/boardDelete.js"></script>
+		<script type="module" src="/controllers/boardPatch.js"></script>
+		<script type="module" src="/controllers/cardsGet.js"></script>
+		<script type="module" src="/controllers/cardsPatch.js"></script>
+		<script type="module" src="/controllers/cardsPost.js"></script>
 
 		<footer>
 				<div style="margin: 20px;"></div>
