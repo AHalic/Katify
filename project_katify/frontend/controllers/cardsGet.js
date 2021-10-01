@@ -81,3 +81,5 @@ api.get(`/${boarduuid}`).then(res => {
         createCard(data)
     }
 })
+
+export default createCard
