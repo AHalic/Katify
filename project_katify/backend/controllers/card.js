@@ -34,11 +34,4 @@ module.exports = app => {
 
         Card.deleteID(uuid, id, res)
     })
-
-    app.delete('/:uuid', (req, res) => {
-        const uuid = req.params.uuid
-        const id = parseInt(req.params.id)
-
-        Card.delete(id, res)
-    })
 }
