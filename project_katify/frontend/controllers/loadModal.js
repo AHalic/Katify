@@ -79,6 +79,9 @@ function sendCard(data, id, card) {
         description: data[4].value
     }
 
+    if (editedCard.name.length === 0)
+        editedCard.name = "Untitled"
+
     api.patch(`/${boarduuid}/${id}`, editedCard)
     document.getElementById(id).remove();
     addCard(editedCard, id)
