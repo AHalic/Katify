@@ -60,7 +60,7 @@ class Board {
     }
 
     delete(uuid, res) {
-        const sql = 'DELETE FROM Boards WHERE uuid=? AND DELETE FROM Cards WHERE uuid=?'
+        const sql = "DELETE a.*, b.* FROM Boards a LEFT JOIN Cards b ON b.uuid = a.uuid WHERE a.uuid=?"
 
         conexao.query(sql, uuid, (erro, resultados) => {
             if(erro) {
