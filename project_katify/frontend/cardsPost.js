@@ -15,10 +15,12 @@ function postCard(status, box) {
     let data = document.forms["modalForm"].elements
     let boardName
 
-    if (data[0].value.lenght === 0)
+    if (data[0].value.length === 0)
         boardName = "Untitled"
-    else
+    else {
+        console.log(data[0].value)
         boardName = data[0].value
+    }
 
     let card = { "name": boardName,
                  "status": status, 
@@ -47,21 +49,27 @@ function postCard(status, box) {
         outerDiv.appendChild(innerDiv)
         
         let tagRow = document.createElement("div")
-        tagRow.classList.add("row", "tag-row")
-
-        if (card.tag1.lenght !== 0) {
+        tagRow.classList.add("row")
+    
+        if (card.tag1.length != 0) {
             let tagOne = document.createTextNode(card.tag1)
-            let divTagOne = document.createElement("div")
-
-            divTagOne.appendChild(tagOne)
-            divTagOne.classList.add("tag-color", randomColor())
-            tagRow.appendChild(divTagOne)
+            let tagOneDiv = document.createElement("div")
+            tagOneDiv.classList.add("tag-color", randomColor())
+    
+            tagOneDiv.appendChild(tagOne)
+            tagRow.appendChild(tagOneDiv)
+            tagRow.classList.add("tag-row")
+    
         } 
-
-        if (card.tag2.lenght !== 0) {
+    
+        if (card.tag2.length != 0) {
             let tagTwo = document.createTextNode(card.tag2)
-            tagTwo.classList.add("tag-color", randomColor())
-            tagRow.appendChild(tagTwo)
+            let tagTwoDiv = document.createElement("div")
+            tagTwoDiv.classList.add("tag-color", randomColor())
+    
+            tagTwoDiv.appendChild(tagTwo)
+            tagRow.appendChild(tagTwoDiv)
+            tagRow.classList.add("tag-row")
         }
 
         outerDiv.appendChild(tagRow)
