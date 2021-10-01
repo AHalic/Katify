@@ -7,8 +7,6 @@ let workspaceInput = document.getElementsByClassName("workspace-name")[0]
 let workspaceForm = document.getElementById("workspace-name-form")
 
 api.get('').then(res => {
-	let name;
-
 	for (let board of res.data) {
 		if (board.uuid === boarduuid) {
 			document.getElementsByClassName("workspace-name")[0].value = board.name
