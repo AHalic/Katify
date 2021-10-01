@@ -5,7 +5,8 @@
     font-weight: 500;
 }
 
-.x-button {
+  
+.x-button  {
     color: #FFFFFF;
     opacity: 0.55;
     justify-content: flex-end;
@@ -17,10 +18,16 @@
     justify-content: end;
 }
 
+.x-button:focus, .x-button:active {
+    outline: none;
+    outline-color: transparent;
+}
+
 .x-button:hover {
     color: #F7C4DB;
     opacity: 1;
     transition: 0.6;
+    border-color: transparent;
 }
 
 .to-do-col {
@@ -67,4 +74,8 @@
 .row {
     margin-right: calc(var(--bs-gutter-x) * 1.5);
     margin-left: calc(var(--bs-gutter-x) * 1.5);
+}
+
+.colBoard {
+    margin-bottom: 10px;
 }
