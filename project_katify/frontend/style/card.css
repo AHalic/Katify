@@ -9,6 +9,15 @@
     height: 100%;
 }
 
+.card:hover {
+    background: #f889bb35; 
+}
+
+.delete-board {
+    width: 50px;
+    height: auto;
+    background-color: transparent;;
+}
 
 .card h5 {
     font-size: 1rem;
@@ -54,5 +63,20 @@ btn:active, btn:focus btn:visited {
 
 
 .add-board:hover {
-    background-color: rgba(60, 61, 63, 0.797)
+    background-color: rgba(60, 61, 63, 0.797);
 }
+
+.tag-row {
+    padding-left: 0px;
+    margin-left: 18px;
+    margin-bottom: 10px;
+}
+
+.tag-pink {
+    background-color: RGBA(239,121,138,0.6);
+    padding: 2px 6px;
+    border-radius: 8px;
+    margin-right: 6px;
+    font-size: 12px;
+}
+
