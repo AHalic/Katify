@@ -50,7 +50,7 @@ a {
     color:aliceblue;
     font-family: Montserrat, sans-serif;
     border-style: outset;
-    outline: 2px !important;
+    outline: 0px !important;
     border: none;
 }
 
