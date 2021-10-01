@@ -8,16 +8,17 @@ function createBoard(board) {
 	let colBox = document.getElementsByClassName("home-board")[0]
 	
 	let colDiv = document.createElement("div")
-	colDiv.classList.add("col")
+	colDiv.classList.add("col", "col-3", "colBoard")
 	
 	let outerDiv = document.createElement("div")
-	outerDiv.classList.add("card", "d-flex")
+	outerDiv.classList.add("card", "d-flex", "text-center")
 	
 	let innerDiv = document.createElement("div")
 	innerDiv.className = "card-body"
+	// innerDiv.innerHTML = board.name
 	
 	let cardTitle = document.createElement("h2")
-	cardTitle.className = "boardTitle"
+	cardTitle.classList.add("boardTitle", "card-text", "mt-3")
 	cardTitle.innerHTML = board.name
 	
 	innerDiv.appendChild(cardTitle)
