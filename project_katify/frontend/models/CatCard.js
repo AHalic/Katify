@@ -1,5 +1,3 @@
-import Status from './Status.js'
-
 class CatCard {
     constructor(name, status, description, tags, id, uuid) {
         this._name = name
