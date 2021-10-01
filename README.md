@@ -36,9 +36,15 @@ In `./backend/infra/connection.js` change the password connection to your user's
 
 ### Instalation 
 
-To install all packages used run, inside the backend and frontend repository:
+To install all packages used run in the terminal the following commands:
 
 ```sh
+cd project_katify
+cd frontend
+npm install
+
+cd project_katify
+cd backend
 npm install
 ```
 
