@@ -27,7 +27,7 @@ Key:
 
 ## Setup
 
-This application was made using `MySQL` v.5.7.31,  `Node.JS` v.14.17.6 and `npm` v. 6.14.15. 
+This application was made using `MySQL` v.5.7.31,  `Node.JS` v.14.17.6, `Bootstrap` v.4 and `npm` v.6.14.15. 
 
 ### Configuring Database
 
