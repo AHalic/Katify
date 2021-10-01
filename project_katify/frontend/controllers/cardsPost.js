@@ -2,7 +2,7 @@ import api from '../api.js'
 import Status from '../models/Status.js'
 import CatCard from '../models/CatCard.js'
 import randomColor from './randomColor.js'
-import loadEditModal from './cardsPatch.js'
+import loadEditModal from './loadModal.js'
 
 const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:3000`
@@ -56,13 +56,13 @@ function postCard(status, box) {
     
     api.post(`/${boarduuid}`, card)
     .then(response => {
-        let id = response
+        let id = response.data
         let colBox = document.getElementsByClassName(box)[0]
         let cardClass = new CatCard(card.name, status, card.description, [card.tag1, card.tag2], card.id, boarduuid)
 
         let outerDiv = document.createElement("div")
         outerDiv.className = "card"
-        outerDiv.setAttribute("id", id);
+        outerDiv.setAttribute("id", id)
         outerDiv.setAttribute("data-toggle", "modal")
         outerDiv.setAttribute("data-target", "#editCardModal")
         outerDiv.setAttribute("data-watherver", "@fat")
@@ -103,6 +103,8 @@ function postCard(status, box) {
         colBox.appendChild(outerDiv)  
 
         loadEditModal(outerDiv, cardClass)
+        document.getElementById("modalForm").reset()
+
     })
     .catch(err => {
         alert(`Something went wrong: ${err}`)

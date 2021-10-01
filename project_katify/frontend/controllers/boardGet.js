@@ -1,6 +1,4 @@
 import api from '../api.js'
-import Events from '../models/Events.js'
-import Board from '../models/Board.js'
 
 const url = "http://localhost:3000"
 
