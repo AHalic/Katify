@@ -17,12 +17,10 @@ class Board {
                 res.status(400).json(erro);
             } else {
                 res.status(201).json(board);
-                // console.log(board)
             }
         })          
     }
     
-
     getAll(res) {
         const sql = `SELECT * FROM Boards`
 
@@ -31,7 +29,6 @@ class Board {
                 res.status(400).json(erro);
             } else {
                 res.status(200).json(resultados);
-                // console.log(resultados);
             }
         })
     }
@@ -45,14 +42,11 @@ class Board {
                 res.status(400).json(erro)
             } else {
                 res.status(200).json(board)
-                // console.log(resultados)
             }
         })
     }
 
     change(uuid, name, res) {  
-        console.log(name)
-        console.log(uuid)
         const sql = `UPDATE Boards SET name="${name.name}" WHERE uuid="${uuid}"`
 
         conexao.query(sql, (erro, resultados) => {
@@ -66,7 +60,7 @@ class Board {
     }
 
     delete(uuid, res) {
-        const sql = 'DELETE FROM Boards WHERE uuid=?'
+        const sql = 'DELETE FROM Boards WHERE uuid=? AND DELETE FROM Cards WHERE uuid=?'
 
         conexao.query(sql, uuid, (erro, resultados) => {
             if(erro) {
