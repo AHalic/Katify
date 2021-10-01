@@ -1,4 +1,6 @@
 # Katify 🐱
+
+
 Developed by Beatriz Maia & Sophie Dilhon 
 
 ## About the project
@@ -60,3 +62,7 @@ This server runs in the port 8000.
 ### Using Katify
 
 Using your favorite browser enter the link `http://localhost:8000` and now your ready to Katify!
+
+<p align="center">
+    <img src="project_katify/frontend/resources/cat-icon.png" width="80px" />
+</p>
