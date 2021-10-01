@@ -63,13 +63,55 @@
 				</div>
 		</div>
 
+		<div class="modal fade" id="editCardModal" tabindex="-1" role="dialog" aria-labelledby="editCardModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="addCardModalLabel">Edit Task</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form id="modalForm">
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label form-task-name"></label>
+								<input type="text" class="form-control form-addCard" name="form-name" placeholder="Name" id="recipient-name">
+							</div>
+
+							<div class="row" style="margin-left:0px; margin-right: 0px;">
+
+									<div class="form-group col" style="padding-left: 0px;">
+											<label for="recipient-name" class="col-form-label form-task-tag1"></label>
+											<input type="text" class="form-control form-addCard" name="form-tag1" placeholder="Tag" id="recipient-tag1">
+									</div>
+										
+									<div class="form-group col" style="padding-left: 0px; padding-right: 0px;">
+											<label for="recipient-name" class="col-form-label form-task-tag2"></label>
+											<input type="text" class="form-control form-addCard" name="form-tag2" placeholder="Tag" id="recipient-tag2">
+									</div>
+
+							</div> 
+							<div class="form-group">
+								<label for="message-text" class="col-form-label form-task-description"></label>
+								<textarea class="form-control form-addCard"form-text placeholder="Description" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-add create-task-btn">Edit task</button>
+					</div>
+				</div>
+			</div>
+	</div>
+
 	
 
 		<nav class="navbar topbar justify-content py-0">
 			<a class="navbar-brand" href="http://localhost:8000">
-				<img src="/resources/logo.png"  alt="Katify logo" class="d-inline-block align-text-top align-items-start" style="margin-left: 2vw;">
+				<img src="/resources/logo.png"  alt="Katify logo" class="d-inline-block align-text-top align-items-start" style="margin-left: 2vw; margin-top: 2.3vh;">
 			</a>
-			<input type="image" src="/resources/cat-trash.png" alt="Delete Board" class="d-inline-block align-text-top align-items-end delete-board">
+			<input type="image" src="/resources/trash-can.png" alt="Delete Board" class="d-inline-block align-text-top align-items-end delete-board">
 		</nav>
 			
 
@@ -155,6 +197,7 @@
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script type="module" src="api.js"></script>
 		<script type="module" src="boardfetch.js"></script>
+		<script type="module" src="boardDelete.js"></script>
 		<script type="module" src="cardsPost.js"></script>
 		<script type="module" src="cardsGet.js"></script>
 
