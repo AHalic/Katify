@@ -1,6 +1,7 @@
 import api from './api.js'
 import Status from './models/Status.js'
 import CatCard from './models/CatCard.js'
+import randomColor from './randomColor.js'
 
 const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:3000`
@@ -32,6 +33,46 @@ function createCard(data) {
     let outerDiv = document.createElement("div")
     outerDiv.className = "card"
     outerDiv.setAttribute("id", card.id);
+    outerDiv.setAttribute("data-toggle", "modal")
+    outerDiv.setAttribute("data-target", "#editCardModal")
+    outerDiv.setAttribute("data-watherver", "@fat")
+    
+    // carregar valores nos inputs de edicao
+    outerDiv.addEventListener("click", (event) => {
+        document.getElementById("editTaskName").value = card.name
+        document.getElementById("editTag1").value = card.tags[0]
+        document.getElementById("editTag2").value = card.tags[1]
+        document.getElementById("editDescription").value = card.description
+
+        let select = document.getElementById("selectStatus")
+
+        // remove todas as opcoes
+        for(let i = select.options.length - 1; i >= 0; i--) {
+           select.remove(i);
+        }
+
+        const idByStatus = {
+            "In Progress": "inProgress",
+            "To Do": "toDo",
+            "Done": "done",
+            "Discarded": "discarded"
+        }
+
+        const statusList = Object.keys(idByStatus)
+
+        // recoloca todas as opcoes, colocando como selected a do status
+        for (let i = 0; i < 4; i++) {
+            let opt = document.createElement('option')
+            opt.value = statusList[i]
+            opt.innerHTML = statusList[i]
+
+            if (card.status === statusList[i]) {
+                opt.setAttribute("selected", "true")
+            }
+
+            select.appendChild(opt)
+        }
+    })
 
     let innerDiv = document.createElement("div")
     innerDiv.className = "card-body"
@@ -44,12 +85,10 @@ function createCard(data) {
     let tagRow = document.createElement("div")
     tagRow.classList.add("row")
 
-    console.log(card.tags)
-
     if (card.tags[0].length != 0) {
         let tagOne = document.createTextNode(card.tags[0])
         let tagOneDiv = document.createElement("div")
-        tagOneDiv.classList.add("tag-pink")
+        tagOneDiv.classList.add("tag-color", randomColor())
 
         tagOneDiv.appendChild(tagOne)
         tagRow.appendChild(tagOneDiv)
@@ -60,7 +99,7 @@ function createCard(data) {
     if (card.tags[1].length != 0) {
         let tagTwo = document.createTextNode(card.tags[1])
         let tagTwoDiv = document.createElement("div")
-        tagTwoDiv.classList.add("tag-pink")
+        tagTwoDiv.classList.add("tag-color", randomColor())
 
         tagTwoDiv.appendChild(tagTwo)
         tagRow.appendChild(tagTwoDiv)
