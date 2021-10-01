@@ -1,6 +1,4 @@
-
-
-.modal-content {
+.modal-content{
     background-color: #2D3035;
     color: #F7C4DB;
     font-family: Montserrat, sans-serif;
@@ -49,4 +47,15 @@
 
 .form-control, .form-control:active, .form-control:focus{
     color: white;
+}
+
+.form-select, .form-select[open] {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: 0px;
+    margin-top: 15px;
+}
+
+.btn-delete {
+    background-color: #2D3035;
 }
