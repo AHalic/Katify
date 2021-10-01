@@ -1,21 +1,25 @@
 import api from './api.js'
 
-const url = "http://localhost:3000"
+const boarduuid = document.URL.split('/')[3]
+const url = `http://localhost:8000`
 
-// let workspaceInput = document.getElementsByClassName("form-add-board")[0]
-// let workspaceForm = document.getElementById("addBoard-form")
-let workspaceBtn = document.getElementsByClassName("delete-board")[0]
+let deleteBtn = document.getElementsByClassName("delete-board")[0]
 
-workspaceBtn.addEventListener("click", (event) => {
-    console.log(this)
-    api.post(`/`, { uuid: `${workspaceInput.value}` })
-        .then(res => {
-            document.getElementsByClassName("closeBoardModal")[0].click()
-            window.location = document.URL + res.data.uuid
+deleteBtn.addEventListener("click", (event) => {
+    swal({
+        text: "Are you sure you want to delete this board?",
+        buttons: {cancel: "Oh no!", confirm: "Yes, please!"},
+        className: "alert-content",
+    }).then((value) => {
+            if (value) {
+                api.delete(`/${boarduuid}`, { uuid: `${boarduuid}` })
+                    .then(res => {
+                        window.location = url
+                    })
+                    .catch(err => {
+                        alert(`Something went wrong: ${err}`)
+                    })
+                return false;
+            }
         })
-        .catch(err => {
-            alert(`Something went wrong: ${err}`)
-        })
-    return false;
-
 })
