@@ -1,4 +1,4 @@
-import api from './api.js'
+import api from '../api.js'
 
 const url = "http://localhost:3000"
 const boarduuid = document.URL.split('/')[3]
