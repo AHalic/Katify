@@ -1,0 +1,36 @@
+.swal-modal {
+    background-color: #2D3035;
+    border-radius: 2px;
+}
+
+.swal-text {
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    color: aliceblue;
+}
+
+.swal-button {
+    border-radius: 2px;
+    /* background-color: #EF798A; */
+    font-size: 12px;
+    color: aliceblue;
+    border: 0px solid transparent;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-button--confirm, .swal-button--confirm:focus {
+    background-color: #EF798A;    
+    outline-color: #EF798A;
+}
+
+.swal-button--confirm:not([disabled]):hover {
+    background-color: #ef798ba5;    
+}
+
+.swal-button--cancel, .swal-button--cancel:focus {
+    background-color: rgba(145, 78, 184, 0.701);    
+}
+
+.swal-button--cancel:not([disabled]):hover  {
+    background-color: rgba(145, 78, 184, 0.495);    
+}
