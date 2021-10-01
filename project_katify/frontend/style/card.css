@@ -14,7 +14,7 @@
 }
 
 .delete-board {
-    width: 50px;
+    width: 45px;
     height: auto;
     background-color: transparent;;
 }
@@ -68,15 +68,34 @@ btn:active, btn:focus btn:visited {
 
 .tag-row {
     padding-left: 0px;
-    margin-left: 18px;
+    margin-left: calc(var(--bs-gutter-x) * 0.5) !important;
     margin-bottom: 10px;
 }
 
-.tag-pink {
-    background-color: RGBA(239,121,138,0.6);
+.color-pink {
+    background-color: rgba(239,121,138,0.6);
+}
+
+.color-purple {
+    background-color: rgba(145, 78, 184, 0.6);
+}
+
+.color-blue {
+    background-color: rgba(113, 128, 185, 0.6);
+}
+
+.color-teal {
+    background-color: rgba(11, 113, 137, 0.6);
+}
+
+.tag-color{
     padding: 2px 6px;
     border-radius: 8px;
     margin-right: 6px;
-    font-size: 12px;
+    font-size: 14px;
+    word-wrap: normal;
+    width: -webkit-min-content;
+    width: -moz-fit-content;
+    height: -webkit-min-content;
+    white-space:nowrap;
 }
-
