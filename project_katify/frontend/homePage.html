@@ -10,21 +10,35 @@
         <link rel="stylesheet" href="/style/page.css">
         <link rel="stylesheet" href="/style/columns.css">
 		<link rel="stylesheet" href="/style/modal.css">
+		<link rel="stylesheet" href="/style/nav.css">
+
         <title>Katify Home</title>
     </head>
     <body>
-        <img src="/resources/logo.png"  alt="Katify logo" class="d-inline-block align-text-top" style="margin-left: 2vw; margin-top: 2vh; width: 220px; height: auto;">
+        
+      <nav class="navbar topbar justify-content py-0">
+        <a class="navbar-brand" href="http://localhost:8000">
+          <img src="/resources/logo.png"  alt="Katify logo" class="d-inline-block align-text-top align-items-start" style="margin-left: 2vw; margin-top: 2.3vh;">
+        </a>
+      </nav>
+        
         
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script type="module" src="api.js"></script>
-        <script type="module" src="boardGet.js"></script>
-        <script type="module" src="boardPost.js"></script>
+        <script type="module" src="/controllers/boardGet.js"></script>
+        <script type="module" src="/controllers/boardPost.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-        <div class="container" style="margin-top: 15vh;">
+        <div class="container" style="margin-top: 5vh;">
+			<div class="row">
+				<h1 class="workspace-name" style="margin-bottom: 0px;">Workspaces</h1>
+				<div class="col">
+					<hr style="color: #EF798A; border-width: 1px; opacity: 100%; height: 1px;"/>
+				</div>
+			</div>
             <div class="row box-col justify-content-center home-board">
                 <div class="col col-3 colBoard">
                     <div class="card d-flex">
@@ -60,7 +74,6 @@
                        placeholder="Board Name" class="form-control form-add-board" id="board-name">
                   </div>
                   <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                     <button type="submit" class="btn btn-primary btn-add addBoard-btn">Add Board</button>
                   </div>
                 </form>
@@ -69,5 +82,8 @@
           </div>
         </div>
 
+		<footer>
+			<div style="margin: 40px;"></div>
+		</footer>
     </body>
 </html>
