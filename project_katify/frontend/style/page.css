@@ -10,6 +10,9 @@ body {
     margin-top: 2vh;
     margin-bottom: 5vh;
     /* text-shadow: 2px 29px #2D3035; */
+    background-color: transparent; 
+    border-width: 0px; 
+    outline: none;
 }
 
 .add-board {
