@@ -1,5 +1,6 @@
 import api from './api.js'
 import Status from './models/Status.js'
+import randomColor from './randomColor.js'
 
 const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:3000`
@@ -9,9 +10,17 @@ let toDoButEvent = document.getElementsByClassName("x-button")[1]
 let doneButEvent = document.getElementsByClassName("x-button")[2]
 let discardedButEvent = document.getElementsByClassName("discard-button")[0]
 
+
 function postCard(status, box) {
     let data = document.forms["modalForm"].elements
-    let card = { "name": data[0].value,
+    let boardName
+
+    if (data[0].value.lenght === 0)
+        boardName = "Untitled"
+    else
+        boardName = data[0].value
+
+    let card = { "name": boardName,
                  "status": status, 
                  "description": data[3].value,
                  "tag1": data[1].value, 
@@ -40,18 +49,18 @@ function postCard(status, box) {
         let tagRow = document.createElement("div")
         tagRow.classList.add("row", "tag-row")
 
-        if (card.tag1 != null) {
+        if (card.tag1.lenght !== 0) {
             let tagOne = document.createTextNode(card.tag1)
             let divTagOne = document.createElement("div")
 
             divTagOne.appendChild(tagOne)
-            divTagOne.classList.add("tag-pink")
+            divTagOne.classList.add("tag-color", randomColor())
             tagRow.appendChild(divTagOne)
         } 
 
-        if (card.tag2 != null) {
+        if (card.tag2.lenght !== 0) {
             let tagTwo = document.createTextNode(card.tag2)
-            tagTwo.classList.add("tag-pink")
+            tagTwo.classList.add("tag-color", randomColor())
             tagRow.appendChild(tagTwo)
         }
 
