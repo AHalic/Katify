@@ -49,11 +49,20 @@
     color: white;
 }
 
-.form-select, .form-select[open] {
+.form-select {
     background-color: rgba(0, 0, 0, 0.1);
     color: white;
     border: 0px;
     margin-top: 15px;
+}
+
+.status-option {
+    background-color: #2D3035;
+    border: 0px;
+}
+
+.form-select:focus {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .btn-delete {
