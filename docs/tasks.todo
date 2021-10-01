@@ -17,3 +17,10 @@
 
 # Questions
 ✔ Devemos usar getters e setters em Javascript? Isso continua como boa prática? @done(21-09-27 15:56)
+
+# Board
+✔ Add trash to boards (click and the board will be deleted) @done(21-10-01 02:21)
+✔ Post and redirect @done(21-10-01 02:21)
+
+# Cards
+✔ Delete Card @done(21-10-01 12:24)
