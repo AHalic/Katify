@@ -2,7 +2,7 @@ import api from '../api.js'
 import Status from '../models/Status.js'
 import CatCard from '../models/CatCard.js'
 import randomColor from './randomColor.js'
-import loadEditModal from './cardsPatch.js'
+import loadEditModal from './loadModal.js'
 
 const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:3000`
