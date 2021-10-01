@@ -1,6 +1,6 @@
-import Events from './models/Events.js'
-import Board from './models/Board.js'
-import api from './api.js'
+import api from '../api.js'
+import Events from '../models/Events.js'
+import Board from '../models/Board.js'
 
 const url = "http://localhost:3000"
 
@@ -15,7 +15,6 @@ function createBoard(board) {
 	
 	let innerDiv = document.createElement("div")
 	innerDiv.className = "card-body"
-	// innerDiv.innerHTML = board.name
 	
 	let cardTitle = document.createElement("h2")
 	cardTitle.classList.add("boardTitle", "card-text", "mt-3")
