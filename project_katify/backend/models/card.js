@@ -6,12 +6,11 @@ class Card {
        
         const sql = 'INSERT INTO Cards SET ?';
 
-        conexao.query(sql, card, (erro, resultados) => {
+        conexao.query(sql, card, (erro, results) => {
             if(erro) {
                 res.status(400).json(erro);
             } else {
-                res.status(201).json(card);
-                // console.log(card)
+                res.status(201).json(results.insertId);
             }
         })
     }
