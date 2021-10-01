@@ -15,7 +15,6 @@ class Card {
         })
     }
 
-
     get(uuid, res) {
         const sql = `SELECT * FROM Cards WHERE uuid="${uuid}"`
 
@@ -24,7 +23,6 @@ class Card {
                 res.status(400).json(erro);
             } else {
                 res.status(200).json(resultados);
-                // console.log(resultados);
             }
         })
     }
@@ -77,20 +75,6 @@ class Card {
             }
         })
     }
-
-    // listaTags(uuid, res) {
-    //  // Se for usar adicionar where
-    //     const sql = 'SELECT DISTINCT tag1 from Cards WHERE  UNION SELECT DISTINCT tag2 FROM Cards WHERE ';
-
-    //     conexao.query(sql, (erro, resultados) => {
-    //         const card = resultados
-    //         if(erro) {
-    //             res.status(400).json(erro)
-    //         } else {
-    //             res.status(200).json(card)
-    //         }
-    //     })
-    // }
 }
 
     
