@@ -7,6 +7,11 @@ Developed by Beatriz Maia & Sophie Dilhon
 
 Katify is a cat themed Kanban, developed to help users to organize their tasks. For now it doesn't have a multi-users system implemented and runs only for one user. The frontend and backend are implemented seperately with frontend realated features in project_katify/frontend and backend in project_katify/backend. 
 
+
+<p align="center">
+    <img src="docs/example_use.gif" width="55%" height="auto" />
+</p>
+
 ## Features
 
 - :green_circle: Create kanban board with atribute: name.
