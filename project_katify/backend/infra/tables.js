@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Classe referente as tabelas da connection do banco de dados MySQL
  * Data: Outubro 2021
  * @version 1.0
