@@ -1,6 +1,23 @@
+/*
+ * Descricao: Arquivo contendo a classe referente a tabela Cards contendo os métodos
+ * usados para http request
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
+*/
+
 const connection = require('../infra/connection');
 
+
+/**
+ * Classe da tabela Cards
+ */
 class Card {
+    /**
+     * Método que adiciona um card na tabela Cards
+     * @param {JSON} card objeto contendo os dados do card
+     * @param {*} res 
+     */
     add(card, res) {
        
         const sql = 'INSERT INTO Cards SET ?';
@@ -14,6 +31,11 @@ class Card {
         })
     }
 
+    /**
+     * Método que retorna todos os cards da tabela contendo um uuid específico
+     * @param {String} uuid identificador único do board
+     * @param {*} res 
+     */
     get(uuid, res) {
         const sql = `SELECT * FROM Cards WHERE uuid="${uuid}"`
 
@@ -26,6 +48,12 @@ class Card {
         })
     }
 
+    /**
+     * Método que retorna um card de ide específico de board específico
+     * @param {String} uuid identificador únido do board
+     * @param {int} id identificador do card
+     * @param {*} res 
+     */
     searchID(uuid, id, res) {
         const sql = `SELECT * FROM Cards WHERE id=${id} AND uuid="${uuid}"`
 
@@ -39,6 +67,13 @@ class Card {
         })
     }
 
+    /**
+     * Método que modifica um card específico de um board específico
+     * @param {String} uuid identificador único do board
+     * @param {int} id identificador do card
+     * @param {JSON} valores objeto contendo os dados do card modificado
+     * @param {*} res 
+     */
     change(uuid, id, valores, res) {  
         const sql = 'UPDATE Cards SET ? WHERE id=? and uuid=?'
 
@@ -51,6 +86,12 @@ class Card {
         })
     }
 
+    /**
+     * Método que remove da tabela Cards um card de id específico
+     * @param {String} uuid identificado único do board
+     * @param {int} id identificador do card
+     * @param {*} res 
+     */
     deleteID(uuid, id, res) {
         const sql = 'DELETE FROM Cards WHERE id=? AND uuid=?'
 
@@ -63,6 +104,11 @@ class Card {
         })
     }
 
+    /**
+     * Método que remove da tabela Cards todos os cards de um board específico
+     * @param {String} uuid identificador único do board
+     * @param {*} res 
+     */
     delete(uuid, res) {
         const sql = 'DELETE FROM Cards WHERE uuid=?'
 
