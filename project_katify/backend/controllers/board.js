@@ -1,12 +1,17 @@
 /*
-  Descricao: Controllers relacionados aos boards
-  Versao: 1.0
-  Data: Outubro 2021
+ * Descricao: Controllers relacionados aos boards
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
  */
 
-// Importa modulos
 const Board = require('../models/board')
 
+
+/**
+ * Define http requests relacionadas ao board (post, patch, get e delete)
+ * @param {*} app localhost a partir de onde será feito o request
+ */
 module.exports = app => {
     /*
      * Request para criar board
@@ -34,7 +39,7 @@ module.exports = app => {
     })
 
     /*
-     * Request para deletar um board
+     * Request para deletar um board (e todos os cards deste)
      */
     app.delete('/:uuid', (req, res) => {
         const uuid = req.params.uuid
