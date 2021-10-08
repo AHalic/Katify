@@ -1,10 +1,23 @@
+/**
+ * Descricao: Funcoes relacionadas a remocao de um board
+ * Data: Outubro 2021
+ * @version: 1.0
+ * @author Beatriz Maia & Sophie Dilhon
+ */ 
+
 import api from '../api.js'
 
-const boarduuid = document.URL.split('/')[3]
 const url = `http://localhost:8000`
 
+// Valor uuid do board
+const boarduuid = document.URL.split('/')[3]
+
+// Secao do html em que o board eh deletado
 let deleteBtn = document.getElementsByClassName("delete-board")[0]
 
+/**
+ * Evento de remoção de board com pop-up de confirmacao
+ */
 deleteBtn.addEventListener("click", (event) => {
     swal({
         text: "Are you sure you want to delete this board?",
@@ -12,6 +25,7 @@ deleteBtn.addEventListener("click", (event) => {
         className: "alert-content",
     }).then((value) => {
             if (value) {
+                // Chama api para remover board
                 api.delete(`/${boarduuid}`, { uuid: `${boarduuid}` })
                     .then(res => {
                         window.location = url
