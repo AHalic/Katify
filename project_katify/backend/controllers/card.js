@@ -9,7 +9,7 @@
 const Card = require('../models/card')
 
 /**
- * Define http requests (post, patch, get e delete)
+ * Define http requests relacionadas aos cards (post, patch, get e delete)
  * @param {*} app localhost a partir de onde será feito o request
  */
 module.exports = app => {
