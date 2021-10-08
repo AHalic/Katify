@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Funcoes relacionadas a atualizacao das informacoes de um board
  * Data: Outubro 2021
  * @version: 1.0
@@ -10,7 +10,7 @@ import api from '../api.js'
 // Valor uuid do board
 const boarduuid = document.URL.split('/')[3]
 
-// Elementos referentes ao nome do board na pagina
+// Elementos referentes ao Form de modificação do Board
 let workspaceInput = document.getElementsByClassName("workspace-name")[0]
 let workspaceForm = document.getElementById("workspace-name-form")
 
@@ -28,7 +28,7 @@ api.get('').then(res => {
 })
 
 /**
- * Evento em submit para alterar o nome do workspace
+ * Evento em submit (enter) para alterar o nome do workspace
  */
 workspaceForm.addEventListener("submit", (event) => {
 	event.preventDefault();

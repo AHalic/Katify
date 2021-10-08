@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Funcoes relacionadas a visualizacao das informacoes de um board
  * Data: Outubro 2021
  * @version: 1.0
@@ -9,7 +9,7 @@ import api from '../api.js'
 
 /**
  * Cria board para apresentar na pagina home
- * @param {*} board - 
+ * @param {*} board - dados referente ao Board criado
  */
 function createBoard(board) {
 	// Create elements with boostrap elements

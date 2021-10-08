@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Funcoes relacionadas a remocao de um board
  * Data: Outubro 2021
  * @version: 1.0
@@ -12,7 +12,7 @@ const url = `http://localhost:8000`
 // Valor uuid do board
 const boarduuid = document.URL.split('/')[3]
 
-// Secao do html em que o board eh deletado
+// Botão do html que ativa o evento de deletar o board
 let deleteBtn = document.getElementsByClassName("delete-board")[0]
 
 /**
