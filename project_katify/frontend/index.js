@@ -12,4 +12,4 @@ app.get('/:uuid', function(req, res) {
     res.sendFile(path.join(__dirname, '/boardPage.html'))
 })
 
-app.listen(8000, () => console.log('Frontend 8000'))
+app.listen(8000, () => console.log('Servidor Frontend, rodando na porta 8000'))
