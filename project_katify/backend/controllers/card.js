@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Controllers relacionados aos card
  * Data: Outubro 2021
  * @version 1.0
@@ -52,7 +52,7 @@ module.exports = app => {
     })
 
     /**
-     * Request para adicionar um card em especifico
+     * Request para deletar um card em especifico
      */
     app.delete('/:uuid/:id', (req, res) => {
         const uuid = req.params.uuid

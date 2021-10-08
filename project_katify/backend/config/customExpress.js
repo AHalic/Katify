@@ -1,4 +1,4 @@
-/**
+/*
  * Descricao: Configuracao customizada do express
  * Data: Outubro 2021
  * @version 1.0
