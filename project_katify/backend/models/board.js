@@ -1,6 +1,5 @@
-const moment = require('moment');
 const uuidv4 = require('uuidv4');
-const conexao = require('../infra/connection');
+const connection = require('../infra/connection');
 
 class Board {
     create(boardName, res) {
@@ -12,7 +11,7 @@ class Board {
         }
         const sql = 'INSERT INTO Boards SET ?';
 
-        conexao.query(sql, board, (erro, resultados) => {
+        connection.query(sql, board, (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro);
             } else {
@@ -24,7 +23,7 @@ class Board {
     getAll(res) {
         const sql = `SELECT * FROM Boards`
 
-        conexao.query(sql, (erro, resultados) => {
+        connection.query(sql, (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro);
             } else {
@@ -36,7 +35,7 @@ class Board {
     getUUID(uuid, res) {
         const sql = `SELECT * FROM Boards WHERE uuid="${uuid}"`
 
-        conexao.query(sql, (erro, resultados) => {
+        connection.query(sql, (erro, resultados) => {
             const board = resultados
             if(erro) {
                 res.status(400).json(erro)
@@ -49,7 +48,7 @@ class Board {
     change(uuid, name, res) {  
         const sql = `UPDATE Boards SET name="${name.name}" WHERE uuid="${uuid}"`
 
-        conexao.query(sql, (erro, resultados) => {
+        connection.query(sql, (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {
@@ -61,7 +60,7 @@ class Board {
     delete(uuid, res) {
         const sql = "DELETE a.*, b.* FROM Boards a LEFT JOIN Cards b ON b.uuid = a.uuid WHERE a.uuid=?"
 
-        conexao.query(sql, uuid, (erro, resultados) => {
+        connection.query(sql, uuid, (erro, resultados) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {

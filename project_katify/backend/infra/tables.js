@@ -1,14 +1,20 @@
+/*
+  Descricao: Classe referente as tabelas da connection do banco de dados MySQL
+  Versao: 1.0
+  Data: Outubro 2021
+ */
+
 /**
  * Classe que representa as tabelas do banco de dados
  */
 class Tables {
     /**
      * Inicializa a classe criando as tabelas
-     * @param {*} conexao - constante que guarda 
+     * @param {*} connection - constante que guarda 
      * as informações da conexão com o sql
      */
-    init(conexao) {
-        this.conexao = conexao
+    init(connection) {
+        this.connection = connection
 
         this.createCardTable()
 
@@ -25,7 +31,7 @@ class Tables {
     createCardTable() {
         const sql = 'CREATE TABLE IF NOT EXISTS Cards (id int NOT NULL AUTO_INCREMENT, uuid varchar(40) NOT NULL, name varchar(45) NOT NULL, tag1 varchar(15), tag2 varchar(15), description text, status varchar(15) NOT NULL, PRIMARY KEY(id))'
 
-        this.conexao.query(sql, erro => {
+        this.connection.query(sql, erro => {
             if(erro) {
                 console.log(erro)
             } else {
@@ -44,7 +50,7 @@ class Tables {
     createBoardTable() {
         const sql = 'CREATE TABLE IF NOT EXISTS Boards (id int NOT NULL AUTO_INCREMENT, uuid varchar(40) NOT NULL, name varchar(45) NOT NULL, PRIMARY KEY(id))';
 
-        this.conexao.query(sql, erro => {
+        this.connection.query(sql, erro => {
             if(erro) {
                 console.log(erro)
             } else {

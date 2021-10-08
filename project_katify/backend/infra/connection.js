@@ -9,7 +9,7 @@ const mysql = require('mysql2')
 /**
  * Configurações da conexão com mysql
  */
-const conexao = mysql.createConnection({
+const connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
     user: 'root',
@@ -17,4 +17,4 @@ const conexao = mysql.createConnection({
     database: 'katify' // Nome do db criado
 })
 
-module.exports = conexao
+module.exports = connection
