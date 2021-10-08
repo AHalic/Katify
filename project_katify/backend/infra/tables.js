@@ -1,7 +1,8 @@
-/*
-  Descricao: Classe referente as tabelas da connection do banco de dados MySQL
-  Versao: 1.0
-  Data: Outubro 2021
+/**
+ * Descricao: Classe referente as tabelas da connection do banco de dados MySQL
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
  */
 
 /**
