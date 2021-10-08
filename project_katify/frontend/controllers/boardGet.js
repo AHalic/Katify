@@ -1,8 +1,19 @@
+/**
+ * Descricao: Funcoes relacionadas a visualizacao das informacoes de um board
+ * Data: Outubro 2021
+ * @version: 1.0
+ * @author Beatriz Maia & Sophie Dilhon
+ */ 
+
 import api from '../api.js'
 
-const url = "http://localhost:3000"
-
+/**
+ * Cria board para apresentar na pagina home
+ * @param {*} board - 
+ */
 function createBoard(board) {
+	// Create elements with boostrap elements
+
 	let colBox = document.getElementsByClassName("home-board")[0]
 	
 	let colDiv = document.createElement("div")
@@ -30,6 +41,10 @@ function createBoard(board) {
 	colBox.appendChild(colDiv)    
 }
 
+/**
+ * Mapea todos os boards presentes no banco de dado e cria o board
+ * na pagina inicial (home)
+ */
 api.get('').then(res => {
 	res.data.map((board) => {
 		createBoard(board)
