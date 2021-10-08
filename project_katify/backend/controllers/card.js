@@ -1,15 +1,16 @@
 /**
-  Descricao: Controllers relacionados aos card
-  Versao: 1.0
-  Data: Outubro 2021
+ * Descricao: Controllers relacionados aos card
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
  */
 
-// Importa modulos
+
 const Card = require('../models/card')
 
 /**
- * 
- * @param {*} app 
+ * Define http requests (post, patch, get e delete)
+ * @param {*} app localhost a partir de onde será feito o request
  */
 module.exports = app => {
     /**
