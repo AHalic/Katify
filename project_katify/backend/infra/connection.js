@@ -1,7 +1,8 @@
-/*
-  Descricao: Modulo referente a conexao do banco de dados MySQL
-  Versao: 1.0
-  Data: Outubro 2021
+/**
+ * Descricao: Modulo referente a conexao do banco de dados MySQL
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
  */
 
 const mysql = require('mysql2')
