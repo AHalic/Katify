@@ -1,3 +1,9 @@
+/*
+  Descricao: Modulo referente a conexao do banco de dados MySQL
+  Versao: 1.0
+  Data: Outubro 2021
+ */
+
 const mysql = require('mysql2')
 
 /**
