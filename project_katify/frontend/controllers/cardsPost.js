@@ -1,24 +1,40 @@
+/*
+ * Descricao: Funcoes relacionadas a adicao de um card em um board
+ * Data: Outubro 2021
+ * @version: 1.0
+ * @author Beatriz Maia & Sophie Dilhon
+ */ 
+
 import api from '../api.js'
 import Status from '../models/Status.js'
 import CatCard from '../models/CatCard.js'
 import randomColor from './randomColor.js'
 import loadEditModal from './loadModal.js'
 
+// uuid do board atual
 const boarduuid = document.URL.split('/')[3]
-const url = `http://localhost:3000`
 
+// Botões relativos a criação de um card na coluna específica
 let inProgButEvent = document.getElementsByClassName("x-button")[0]
 let toDoButEvent = document.getElementsByClassName("x-button")[1]
 let doneButEvent = document.getElementsByClassName("x-button")[2]
 let discardedButEvent = document.getElementsByClassName("discard-button")[0]
 
+/**
+ * Função que cria um objeto contendo os dados do card 
+ * que será adicionado ao board
+ * @param {*} data dados a respeito do novo card
+ * @param {String} status situação do card
+ * @returns {Json} dados do card
+ */
 function createCard(data, status) {
-    let boardName, description, tag1, tag2
+    let cardName, description, tag1, tag2
 
+    // Caso não seja informado um nome, o card tem titulo Utitled 
     if (data[0].value.length === 0)
-        boardName = "Untitled"
+        cardName = "Untitled"
     else {
-        boardName = data[0].value
+        cardName = data[0].value
     }
 
     if (data[3].value.length === 0) {
@@ -39,7 +55,7 @@ function createCard(data, status) {
         tag2 = data[2].value
     }
 
-    let card = { "name": boardName,
+    let card = { "name": cardName,
                  "status": status, 
                  "description": description,
                  "tag1": tag1, 
@@ -50,10 +66,17 @@ function createCard(data, status) {
     return card
 }
 
+/**
+ * Função que cria um card, o armazena no bd e apresenta no html
+ * @param {String} status situação do card
+ * @param {String} box coluna em que será criado o card
+ */
 function postCard(status, box) {
+    // dados obtidos do forms
     let data = document.forms["modalForm"].elements
     let card = createCard(data, status)
     
+    // Faz a conexão com back para fazer o post e posiciona o card no html
     api.post(`/${boarduuid}`, card)
     .then(response => {
         let id = response.data
@@ -111,42 +134,67 @@ function postCard(status, box) {
     })
 }
 
+/**
+ * Função para post do card com status in progress
+ */
 function postCardInProgress() {
     postCard(Status.inProgress, "box-inProgress")
 }
 
+/**
+ * Função para post do card com status to do
+ */
 function postCardToDo() {
     postCard(Status.toDo, "box-toDo")
 }
 
+/**
+ * Função para post do card com status done
+ */
 function postCardDone() {
     postCard(Status.done, "box-done")
 }
 
+/**
+ * Função para post do card com status discarded
+ */
 function postCardDiscarded() {
     postCard(Status.discarded, "box-discarded")
 }
 
+/**
+ * Adiciona evento onclick para criar card na coluna to-do
+ */
 function clickedPostCardToDo() {
     let createTask = document.getElementsByClassName("create-task-btn")[0]
     createTask.onclick = postCardToDo
 }
 
+/**
+ * Adiciona evento onclick para criar card na coluna done
+ */
 function clickedPostCardDone() {
     let createTask = document.getElementsByClassName("create-task-btn")[0]
     createTask.onclick = postCardDone
 }
 
+/**
+ * Adiciona evento onclick para criar card na coluna in progress
+ */
 function clickedPostCardInProgress() {
     let createTask = document.getElementsByClassName("create-task-btn")[0]
     createTask.onclick = postCardInProgress
 }
 
+/**
+ * Adiciona evento onclick para criar card na coluna discarded
+ */
 function clickedPostCardDiscarded() {
     let createTask = document.getElementsByClassName("create-task-btn")[0]
     createTask.onclick = postCardDiscarded
 }
 
+// Adiciona eventos aos botões de criação de card
 inProgButEvent.addEventListener('click', clickedPostCardInProgress, true);
 toDoButEvent.addEventListener('click', clickedPostCardToDo, true);
 doneButEvent.addEventListener('click', clickedPostCardDone, true);
