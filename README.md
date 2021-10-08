@@ -77,3 +77,7 @@ Using your favorite browser enter the link `http://localhost:8000` and now your 
 <p align="center">
     <img src="project_katify/frontend/resources/cat-icon.png" width="80px" />
 </p>
+
+ ## Resources
+
+Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>.
