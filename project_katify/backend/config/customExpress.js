@@ -1,13 +1,18 @@
 /**
-  Descricao: Configuracao customizada do express
-  Versao: 1.0
-  Data: Outubro 2021
- */
+ * Descricao: Configuracao customizada do express
+ * Data: Outubro 2021
+ * @version 1.0
+ * @author Beatriz Maia & Sophie Dilhon
+*/
 
-// Importa modulos
 const express = require('express');
 const consign = require('consign');
  
+
+/**
+ * Cria o app com os dados e rotas importantes
+ * @returns app com informações para abrir o servidor
+ */
 module.exports = () => {
     const app = express();
     
